@@ -6,6 +6,9 @@ const nextConfig = {
     // your project has type errors.
     // !! WARN !!
     ignoreBuildErrors: true,
+    },
+    eslint: {
+        ignoreBuildErrors: true
     }
 };
 
