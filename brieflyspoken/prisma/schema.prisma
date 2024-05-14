@@ -1,3 +1,7 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DB_URL")
@@ -17,6 +21,6 @@ model Audio {
     createdAt DateTime @default(now())
     briefingId Int @unique
     script Briefing @relation(fields: [briefingId], references: [id])
-    url String
+    url String?
     isUserAdded Boolean
 }

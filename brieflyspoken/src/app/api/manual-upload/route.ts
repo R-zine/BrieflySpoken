@@ -1,9 +1,9 @@
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { headers } from "next/headers";
+import { prisma } from '@/db';
 
 
 export async function POST(req: any) {
-  
   
   const headersList = headers()
 
@@ -13,9 +13,28 @@ export async function POST(req: any) {
 
   const data = await req.formData()
 
+  const content = data.get("script")
+  const isTwo = Boolean(data.get("isTwo"))
+  const isCustomVoice = Boolean(data.get("isCustomVoice"))
+
+  const briefing = await prisma.briefing.create({
+    data: {
+      content,
+      isTwo,
+      isCustomVoice
+    }
+  })
+
+  const audioEntry = await prisma.audio.create({
+    data: {
+      briefingId: briefing.id,
+      isUserAdded: true,
+      url: ""
+    }
+  })
+
   const rawFile = data.get("recording")
   const fileName = rawFile.name;
-  const fileType = rawFile.type;
 
   const fileReader = rawFile.stream().getReader();
 
@@ -46,14 +65,14 @@ export async function POST(req: any) {
 
   const uploadCommand = new PutObjectCommand({
     Bucket: 'audio-storage',
-    Key: fileName,
+    Key: String(audioEntry.id),
     Body: fileBinary,
     ContentType: 'audio/mpeg',
   })
 
-  const fileUploadAction = await client.send(uploadCommand)
+ await client.send(uploadCommand)
 
-  console.log(fileUploadAction)
+
 
   return new Response('Success!', {
     status: 200,
