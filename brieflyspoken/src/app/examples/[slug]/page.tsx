@@ -1,5 +1,5 @@
-import { ExamplesPage } from "@/app/components/ExamplesPage"
-import { prisma } from '@/db';
+import { ExamplesPage } from "../../../app/components/ExamplesPage"
+import { prisma } from '../../../db';
 
 export default async function Page({ params }: { params: { slug: string } }) {
 

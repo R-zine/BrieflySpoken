@@ -1,6 +1,6 @@
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { headers } from "next/headers";
-import { prisma } from '@/db';
+import { prisma } from '../../../db';
 
 
 export async function POST(req: any) {
