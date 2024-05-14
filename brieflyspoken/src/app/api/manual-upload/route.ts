@@ -16,12 +16,14 @@ export async function POST(req: any) {
   const content = data.get("script")
   const isTwo = Boolean(data.get("isTwo"))
   const isCustomVoice = Boolean(data.get("isCustomVoice"))
+  const originalText = data.get("originalText") || ""
 
   const briefing = await prisma.briefing.create({
     data: {
       content,
       isTwo,
-      isCustomVoice
+      isCustomVoice,
+      originalText
     }
   })
 
@@ -34,7 +36,6 @@ export async function POST(req: any) {
   })
 
   const rawFile = data.get("recording")
-  const fileName = rawFile.name;
 
   const fileReader = rawFile.stream().getReader();
 

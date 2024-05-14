@@ -11,6 +11,7 @@ model Briefing {
     id Int @id @default(autoincrement())
     createdAt DateTime @default(now())
     content String
+    originalText String?
     isTwo Boolean
     isCustomVoice Boolean
     audio Audio?

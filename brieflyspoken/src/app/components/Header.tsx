@@ -6,7 +6,6 @@ const Header = () => {
 
             <nav>
                 <Link href="/">Home</Link>
-                <Link href="/history">History</Link>
             </nav>
         </header>
     )
