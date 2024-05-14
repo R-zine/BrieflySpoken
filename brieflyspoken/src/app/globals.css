@@ -1,0 +1,19 @@
+:root {
+    --color-accent: rgb(0, 27, 46);
+    --color-neutral: rgb(207, 255, 229);
+    --color-primary: rgb(255, 130, 0);
+    --color-neutral--dark: rgb(178, 224, 200);
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-neutral);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--color-accent);
+}

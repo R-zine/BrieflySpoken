@@ -1,9 +1,10 @@
 import Link from "next/link"
+import './Header.css'
 
 const Header = () => {
     return (
-        <header>header placeholder
-
+        <header>
+            <h1>BrieflySpoken - Examples</h1>
             <nav>
                 <Link href="/">Home</Link>
             </nav>

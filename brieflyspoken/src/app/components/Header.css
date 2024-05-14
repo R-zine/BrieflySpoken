@@ -1,0 +1,19 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background-color: var(--color-accent);
+    padding-block: 8px;
+}
+
+h1 {
+    margin: 0;
+    color: var(--color-neutral);
+    letter-spacing: .125rem;
+}
+
+a {
+    color: var(--color-neutral);
+    text-transform: uppercase;
+}

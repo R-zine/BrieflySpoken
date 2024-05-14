@@ -1,0 +1,17 @@
+*[role="rowgroup"] *[role="row"] {
+    background-color: var(--color-neutral) !important;
+    cursor: pointer;
+}
+
+*[role="rowgroup"] *[role="row"]:nth-of-type(odd) {
+    background-color: var(--color-neutral--dark) !important;
+}
+
+.MuiDataGrid-columnHeaders > *[role="row"] {
+    background-color: var(--color-neutral) !important;
+    /* color: white; */
+}
+
+.MuiDataGrid-footerContainer.MuiDataGrid-withBorderColor.css-wop1k0-MuiDataGrid-footerContainer {
+    display: none;
+}

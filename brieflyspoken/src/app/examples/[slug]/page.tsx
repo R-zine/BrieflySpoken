@@ -17,7 +17,5 @@ export default async function Page({ params }: { params: { slug: string } }) {
         }
     })
 
-    return <div>
-        <ExamplesPage data={{ ...dbData, audioId: audioId?.id }} />
-    </div>
+    return <ExamplesPage data={{ ...dbData, audioId: audioId?.id }} />
 }
