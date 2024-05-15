@@ -72,7 +72,7 @@ export const ExamplesPage = ({ data }: any) => {
             )}
             <section>
                 <h2>Audio Transcript</h2>
-                <article>{data.content.split('\n').map((line: string, index: number) => (
+                <article>{data.content.split('\\n').map((line: string, index: number) => (
                     <Fragment key={index}>
                         {line}
                         <br />
